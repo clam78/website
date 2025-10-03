@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homepage</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Libre+Baskerville&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<header>
+		<h1>Claire Mao</h1>
+	</header>
+
+    <div class="navbar">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="cv.html" class="nav-item">CV</a>
+        <a href="portfolio.html" class="nav-item">Portfolio</a>
+		<a href="photos.html" class="nav-item">Photography</a>
+		<a href="contact.html" class="nav-item">Contact</a>
+        <div class="underline"></div>
+      </div>
+
+	<!-- <img src="images/headshotcopy1.jpg" alt = "Claire Mao's Headshot" width = "300" height = "300" id="headshot"> -->
+	
+	<section class="hero-gallery">
+		<div class="scroller" aria-label="Photo gallery">
+
+			<div class="slide">
+				<img src="images/mainphotos/mit.jpeg" alt="MIT" class="image">
+				<div class="caption">MIT, 2022</div>
+			</div>
+
+			<div class="slide">
+				<img src="images/mainphotos/photog.jpeg" alt="In Switzerland">
+				<div class="caption">Photo-taking in Switzerland</div>
+			</div>
+
+			<div class="slide">
+				<img src="images/mainphotos/museum.JPG" alt="Water lily painting">
+				<div class="caption">Matching with Monet's Lily Pond :)</div>
+			</div>
+
+			<div class="slide">
+				<img src="images/mainphotos/jpl.JPG" alt="JPL sign">
+				<div class="caption">JPL, 2024</div>
+			</div>
+		  	
+			<div class="slide">
+				<img src="images/mainphotos/monet.jpeg" alt="Monet paintings">
+				<div class="caption">Paintings at Monet's garden</div>
+			</div>
+
+			
+
+			<div class="slide">
+				<img src="images/mainphotos/flute.JPG" alt="Playing flute">
+				<div class="caption">Mozart Flute Concerto in G</div>
+			</div>
+
+			<div class="slide">
+				<img src="images/mainphotos/angels.JPG" alt="Angel's landing">
+				<div class="caption">Angel's Landing in Zion National Park!</div>
+			</div>
+
+			<div class="slide">
+				<img src="images/mainphotos/fishy.jpeg" alt="Fish statue">
+				<div class="caption">Found a big fish</div>
+			</div>
+
+			<div class="slide">
+				<img src="images/mainphotos/momo.jpeg" alt="My dog">
+				<div class="caption">My dog, Momo</div>
+			</div>
+
+			<div class="slide">
+				<img src="images/mainphotos/canoe.jpg" alt="In Banff">
+				<div class="caption">On Emerald Lake in Banff</div>
+			</div>
+		</div>
+	</section>
+
+	<main id="homeMain">
+		
+
+	<h2>About Me</h2>
+		<p>Hi! I'm Claire, a senior at MIT studying Mathematics with Computer Science (18C). I'm from a suburb
+			outside Boston and have lived in Massachusetts for most of my life. In my free time, I 
+			enjoy reading, going to the gym, and playing music! I hope you enjoy perusing my website :)
+		</p>
+	
+	<h2>Interests</h2>
+		<p>Product management, software engineering, machine learning, sustainability, traveling, baking, national parks, museums, and the Oxford comma</p>
+
+	</main>
+</body>
+
+<script>
+	const navItems = document.querySelectorAll(".nav-item");
+	const underline = document.querySelector(".underline");
+  
+	let current = location.pathname.split("/").pop() || "index.html";
+  
+	navItems.forEach(item => {
+	  if (item.getAttribute("href") === current) {
+		item.classList.add("active");
+  
+		underline.style.transition = "none";
+		underline.style.width = item.offsetWidth + "px";
+		underline.style.left = item.offsetLeft + "px";
+  
+		requestAnimationFrame(() => {
+		  underline.style.transition = "all 0.3s ease";
+		  underline.style.width = item.offsetWidth + "px";
+		  underline.style.left = item.offsetLeft + "px";
+		});
+	  }
+	});
+  
+	navItems.forEach(item => {
+	  item.addEventListener("click", e => {
+		e.preventDefault();
+  
+		underline.style.width = item.offsetWidth + "px";
+		underline.style.left = item.offsetLeft + "px";
+  
+		setTimeout(() => {
+		  location.href = item.getAttribute("href");
+		}, 150); 
+	  });
+	});
+  </script>
+
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Contact</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Libre+Baskerville&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	
+	<header>
+		<h1>Claire Mao</h1>
+	</header>
+
+	<main>
+
+		<div class="navbar">
+			<a href="index.html" class="nav-item">Home</a>
+			<a href="cv.html" class="nav-item">CV</a>
+			<a href="portfolio.html" class="nav-item">Portfolio</a>
+			<a href="photos.html" class="nav-item">Photography</a>
+			<a href="contact.html" class="nav-item">Contact</a>
+			<div class="underline"></div>
+		</div>
+
+		<!-- <div id="contactform">
+
+			<p>Subject:</p>
+			<input type="text" id="subject">
+
+			<p>Message:</p>
+			<textarea id="body"></textarea>
+
+			<p>
+				<button id="sendMail">Send Email!</button>
+			</p>
+		</div>
+
+		<script>
+			document.getElementById("sendMail").addEventListener("click", function () {
+				let subject = encodeURIComponent(document.getElementById("subject").value);
+				let body = encodeURIComponent(document.getElementById("body").value);
+				
+				let mailtoLink = `mailto:clairemao78@gmail.com?subject=${subject}&body=${body}`;
+				window.location.href = mailtoLink;
+			});
+		</script> -->
+
+		<!-- <table>
+			<thead>
+				<tr>
+					<th>Usage</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>Address</th>
+				</tr>
+			</thead>
+			
+			<tr>
+				<td>Work</td>
+				<td>cmao22@mit.edu</td>
+				<td>111-111-1111</td>
+				<td><address>189 Vassar Street, Cambridge MA</address></td>
+			</tr>
+
+			<tr>
+				<td>Personal</td>
+				<td>clairemao78@gmail.com</td>
+				<td>123-456-7890</td>
+				<td><address>123 Happy Lane, Somewhere MA</address></td>
+			</tr>
+		</table> -->
+		<table>
+			<tr>
+				<td><a href="https://github.com/clam78"><img src="images/githublogo.png" alt = "GitHub Logo" width = 40 id = "githublogo"></a></td>
+				<td><a href="https://www.linkedin.com/in/clairemao-/"><img src="images/linkedinlogo.png" alt = "LinkedIn Logo" width = 40  id = "linkedinlogo"></a></td>
+				<td><img src="images/maillogo.png" alt = "Email Logo" width = 55  id = "sendMail"></td>
+			</tr>
+			<tr>
+				<td>clam78</td>
+				<td>clairemao-</td>
+				<td>cmao22@mit.edu</td>
+			</tr>
+		</table>
+		
+		<script>
+			document.getElementById("sendMail").addEventListener("click", function () {
+				let mailtoLink = `mailto:cmao22@mit.edu?`;
+				window.location.href = mailtoLink;
+			});
+		</script>
+		
+		
+		<!-- <img src="images/mitlogo1.png" alt = "MIT Logo" width = "250" height = "150" id = "mitlogo"> -->
+	</main>
+
+</body>
+
+<script>
+	const navItems = document.querySelectorAll(".nav-item");
+	const underline = document.querySelector(".underline");
+  
+	let current = location.pathname.split("/").pop() || "index.html";
+  
+	navItems.forEach(item => {
+	  if (item.getAttribute("href") === current) {
+		item.classList.add("active");
+  
+		underline.style.transition = "none";
+		underline.style.width = item.offsetWidth + "px";
+		underline.style.left = item.offsetLeft + "px";
+  
+		requestAnimationFrame(() => {
+		  underline.style.transition = "all 0.3s ease";
+		  underline.style.width = item.offsetWidth + "px";
+		  underline.style.left = item.offsetLeft + "px";
+		});
+	  }
+	});
+  
+	navItems.forEach(item => {
+	  item.addEventListener("click", e => {
+		e.preventDefault();
+  
+		underline.style.width = item.offsetWidth + "px";
+		underline.style.left = item.offsetLeft + "px";
+  
+		setTimeout(() => {
+		  location.href = item.getAttribute("href");
+		}, 150); 
+	  });
+	});
+  </script>
+  
+
+</html>

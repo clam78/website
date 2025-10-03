@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Portfolio</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Libre+Baskerville&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+    <header>
+		<h1>Claire Mao</h1>
+	</header>
+
+    <main>
+
+		<div class="navbar">
+			<a href="index.html" class="nav-item">Home</a>
+			<a href="cv.html" class="nav-item">CV</a>
+			<a href="portfolio.html" class="nav-item">Portfolio</a>
+			<a href="photos.html" class="nav-item">Photography</a>
+			<a href="contact.html" class="nav-item">Contact</a>
+			<div class="underline"></div>
+		</div>
+
+		<div class="container">
+			<div class="card" id="Chat App">
+			  <h2>Chat App</h2>
+			  <video src="videos/gradecalc_screenrec2.mov" controls></video>
+			  <p>
+				TO BE COMPLETED...
+			  </p>
+			</div>
+		
+		  
+			<div class="card" id="CSS Demo">
+			  <h2>CSS Demo</h2>
+			  <video src="videos/cssdemo_screenrec.mov" controls></video>
+			  <p>
+				This CSS Demo showcases the different features of text decoration using CSS, such as lines,
+				color, style, and thickness. It allows the user play with the properties to see how they
+				appear on screen. On the right, the CSS code dynamically updates to reflect what changes
+				the user has made. Further, the text which decorations are applied to is editable. A link is 
+				available in the bottom right corner if users want to explore more detailed documentation.
+			  </p>
+			</div>
+
+			<div class="card" id="Expenses">
+				<h2>Expenses</h2>
+				<video src="videos/expenses_screenrec.mov" controls></video>
+				<p>
+				  TBD
+				</p>
+			  </div>
+		</div>
+
+    </main>
+
+
+</body>
+
+<script>
+	const navItems = document.querySelectorAll(".nav-item");
+	const underline = document.querySelector(".underline");
+  
+	let current = location.pathname.split("/").pop() || "index.html";
+  
+	navItems.forEach(item => {
+	  if (item.getAttribute("href") === current) {
+		item.classList.add("active");
+  
+		underline.style.transition = "none";
+		underline.style.width = item.offsetWidth + "px";
+		underline.style.left = item.offsetLeft + "px";
+  
+		requestAnimationFrame(() => {
+		  underline.style.transition = "all 0.3s ease";
+		  underline.style.width = item.offsetWidth + "px";
+		  underline.style.left = item.offsetLeft + "px";
+		});
+	  }
+	});
+  
+	navItems.forEach(item => {
+	  item.addEventListener("click", e => {
+		e.preventDefault();
+  
+		underline.style.width = item.offsetWidth + "px";
+		underline.style.left = item.offsetLeft + "px";
+  
+		setTimeout(() => {
+		  location.href = item.getAttribute("href");
+		}, 150); 
+	  });
+	});
+
+	// portfolio-specific: 2 animations, scroll and zoom when video is hovered over
+  const cards = document.querySelectorAll(".card");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  cards.forEach(card => observer.observe(card));
+
+  </script>
+  
+
+</html>

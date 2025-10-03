@@ -1,0 +1,262 @@
+header {
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    color: rgb(177, 57, 99);
+}
+
+#mylinks {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+#headshot {
+    display: block;
+    margin: 30px auto;
+}
+
+#mitlogo {
+    display: block;
+    margin: 0 auto;
+}
+
+#homeMain {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    padding: 10px;
+    max-width: 800px;
+}
+
+body {
+    background-color: rgba(255, 255, 242, 0.514);
+    font-family: Libre Baskerville;
+    font-kerning: normal;
+    line-height: 1.4;
+}
+
+h1 {
+    font-family: 'Fjalla One';
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 25px;
+    margin: 0 auto;
+}
+
+td {
+    text-align: center;
+}
+
+#contactform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 50px;
+}
+
+#contactform p {
+    margin: 5px 0;
+}
+
+
+#subject {
+    width: 20%;
+    padding: 6px;
+    font-size: 14px;
+}
+
+#body {
+    width: 20%;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.container div {
+    background: #efdff1;
+    border-radius: 10px;
+    color: #000000;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+@media print {
+    video {
+        display: none;
+    }
+    #contactform {
+        display: none;
+    }
+
+    #mylinks {
+        display: none;
+    }
+}
+
+/* nav bar */
+
+.navbar {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+  }
+  
+.nav-item {
+    padding: 10px;
+    text-decoration: none;
+    color: gray;
+    font-weight: 500;
+    position: relative;
+    }
+  
+.nav-item.active {
+    color: rgb(177, 57, 99);
+    font-weight: bold;
+    }
+
+.underline {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background-color: rgb(177, 57, 99);
+    transition: 0.3s ease;
+    width: 0;
+    left: 0;
+    }
+
+/* slide gallery on main page */
+
+.hero-gallery {
+    margin: 12px 0 20px;
+  }
+  
+.scroller {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 12px;
+  }
+  
+/* hide scrollbar */
+.scroller::-webkit-scrollbar { height: 0; }
+.scroller { scrollbar-width: none; }
+
+/* slides */
+.scroller img {
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    scroll-snap-align: center;
+  }
+
+
+/* captions */
+.slide {
+    position: relative;
+    display: inline-block;
+    border-radius: 8px;
+    overflow: hidden;
+    scroll-snap-align: center;
+    flex: none;
+  }
+
+  
+.slide img {
+    display: block;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+.caption {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    transition: opacity .3s ease;
+  }
+
+.slide:hover .caption,
+.slide:focus .caption,
+.slide:focus-within .caption {
+    opacity: 1;
+  }
+
+
+/* portfolio */
+
+.card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease;
+    margin-bottom: 60px;
+  }
+  
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+.card video {
+    width: 100%;
+    transition: transform 0.3s ease;
+  }
+  
+.card video:hover {
+    transform: scale(1.05);
+  }
+  
+.card h2 {
+    position: relative;
+    display: inline-block;
+  }
+.card h2::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: rgb(177, 57, 99);
+    transition: width 0.3s ease;
+  }
+.card h2:hover::after {
+    width: 100%;
+  }
+  
+#fishnflower { 
+    width: 280px;
+    height: 200px;
+    object-fit: cover;
+}
+

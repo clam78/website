@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Photography</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Libre+Baskerville&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+	<header>
+		<h1>Claire Mao</h1>
+	</header>
+
+	<main>
+
+		<div class="navbar">
+			<a href="index.html" class="nav-item">Home</a>
+			<a href="cv.html" class="nav-item">CV</a>
+			<a href="portfolio.html" class="nav-item">Portfolio</a>
+            <a href="photos.html" class="nav-item">Photography</a>
+			<a href="contact.html" class="nav-item">Contact</a>
+			<div class="underline"></div>
+		</div>
+
+        <h2>Fish and Flowers</h2>
+        <p>Koi fish symbolize perseverance and good luck. Their unique patterns and friendly nature are quite endearing, and 
+            over the past few years, I've photographed them when traveling. Water lilies, which often accompany my sightings 
+            of koi, remind me of Monet's paintings. One of my life goals is to create a koi pond with water lilies in my backyard,
+            a beautiful and peaceful space. For now, here's my virtual pond with some fish and flowers from 
+            Barcelona, Panama City, Giverny, Pasadena, and Washington, D.C. :)
+        </p>
+
+        <img src="images/fishandflowers/lily1.JPG" alt = "Water lily" width = "250" id = "fishnflower">
+        <img src="images/fishandflowers/fish2.JPG" alt = "Koi fish" width = "250" id = "fishnflower">
+
+        <img src="images/fishandflowers/lily2.JPG" alt = "Water lily" width = "250" id = "fishnflower">
+        <img src="images/fishandflowers/fish3.JPG" alt = "Koi fish" width = "250" id = "fishnflower">
+
+        <img src="images/fishandflowers/lily5.JPG" alt = "Water lily" width = "250" id = "fishnflower">
+
+        <img src="images/fishandflowers/fish1.JPG" alt = "Koi fish" width = "250" id = "fishnflower">
+        <img src="images/fishandflowers/lily4.JPG" alt = "Water lily" width = "250" id = "fishnflower">
+        <img src="images/fishandflowers/fish4.JPG" alt = "Koi fish" width = "250" id = "fishnflower">
+
+        <img src="images/fishandflowers/lily3.JPG" alt = "Water lily" width = "250" id = "fishnflower">
+
+        <img src="images/fishandflowers/fish5.JPG" alt = "Koi fish" width = "250" id = "fishnflower">
+
+
+		<!-- <img src="images/photos/photo1.JPG" alt = "Zermatt" width = "250" id = "photo1">
+        <img src="images/photos/photo2.JPG" alt = "Matterhorn" width = "250" id = "photo2">
+        <img src="images/photos/photo4.JPG" alt = "Lake" width = "250" id = "photo4">
+        <img src="images/photos/photo8.JPG" alt = "Malibu" width = "250" id = "photo8">
+        <img src="images/photos/photo9.JPG" alt = "Santa Cruz" width = "250" id = "photo9">
+        <img src="images/photos/photo10.JPG" alt = "Santa Monica" width = "250" id = "photo10">
+        <img src="images/photos/photo11.JPG" alt = "Malibu sunset" width = "250" id = "photo11"> -->
+
+        <!-- <img src="images/photo3.JPG" alt = "Zermatt at night" width = "250" id = "photo3">
+        <img src="images/photo5.JPG" alt = "Moustiers-Sainte-Marie" width = "250" id = "photo5">
+        <img src="images/photo7.JPG" alt = "Montmatre" width = "250" id = "photo7"> -->
+
+
+
+		
+	</main>
+</body>
+
+<script>
+	const navItems = document.querySelectorAll(".nav-item");
+	const underline = document.querySelector(".underline");
+  
+	let current = location.pathname.split("/").pop() || "index.html";
+  
+	navItems.forEach(item => {
+	  if (item.getAttribute("href") === current) {
+		item.classList.add("active");
+  
+		underline.style.transition = "none";
+		underline.style.width = item.offsetWidth + "px";
+		underline.style.left = item.offsetLeft + "px";
+  
+		requestAnimationFrame(() => {
+		  underline.style.transition = "all 0.3s ease";
+		  underline.style.width = item.offsetWidth + "px";
+		  underline.style.left = item.offsetLeft + "px";
+		});
+	  }
+	});
+  
+	navItems.forEach(item => {
+	  item.addEventListener("click", e => {
+		e.preventDefault();
+  
+		underline.style.width = item.offsetWidth + "px";
+		underline.style.left = item.offsetLeft + "px";
+  
+		setTimeout(() => {
+		  location.href = item.getAttribute("href");
+		}, 150); 
+	  });
+	});
+  </script>
+
+</html>

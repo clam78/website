@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Curriculum Vitae</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Libre+Baskerville&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+	<header>
+		<h1>Claire Mao</h1>
+	</header>
+
+	<main>
+
+		<div class="navbar">
+			<a href="index.html" class="nav-item">Home</a>
+			<a href="cv.html" class="nav-item">CV</a>
+			<a href="portfolio.html" class="nav-item">Portfolio</a>
+			<a href="photos.html" class="nav-item">Photography</a>
+			<a href="contact.html" class="nav-item">Contact</a>
+			<div class="underline"></div>
+		</div>
+
+		<style>
+			.pdf {
+				width: 100%;
+				aspect-ratio: 4 / 3;
+			}
+		</style>
+		<div>
+			<iframe class="pdf" 
+					src="ClaireMaoResume.pdf"
+				width="600" height="700">
+			</iframe>
+		</div>
+		
+	</main>
+</body>
+
+<script>
+	const navItems = document.querySelectorAll(".nav-item");
+	const underline = document.querySelector(".underline");
+  
+	let current = location.pathname.split("/").pop() || "index.html";
+  
+	navItems.forEach(item => {
+	  if (item.getAttribute("href") === current) {
+		item.classList.add("active");
+  
+		underline.style.transition = "none";
+		underline.style.width = item.offsetWidth + "px";
+		underline.style.left = item.offsetLeft + "px";
+  
+		requestAnimationFrame(() => {
+		  underline.style.transition = "all 0.3s ease";
+		  underline.style.width = item.offsetWidth + "px";
+		  underline.style.left = item.offsetLeft + "px";
+		});
+	  }
+	});
+  
+	navItems.forEach(item => {
+	  item.addEventListener("click", e => {
+		e.preventDefault();
+  
+		underline.style.width = item.offsetWidth + "px";
+		underline.style.left = item.offsetLeft + "px";
+  
+		setTimeout(() => {
+		  location.href = item.getAttribute("href");
+		}, 150); 
+	  });
+	});
+  </script>
+
+</html>
