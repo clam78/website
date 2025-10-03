@@ -7,6 +7,13 @@ h2 {
     color: rgb(177, 57, 99);
 }
 
+.contact {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 10px;
+}
+
 #mylinks {
     display: flex;
     justify-content: center;
@@ -52,6 +59,8 @@ table {
 td {
     text-align: center;
 }
+
+
 
 #contactform {
     display: flex;
