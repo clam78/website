@@ -11,24 +11,22 @@
 
 	<header>
 		<h1>Claire Mao</h1>
+
+		<div class="contact">
+			<a href="https://github.com/clam78"><img src="images/githublogo.png" alt = "GitHub Logo" width = 30 id = "githublogo"></a>
+			<a href="https://www.linkedin.com/in/clairemao-/"><img src="images/linkedinlogo.png" alt = "LinkedIn Logo" width = 30  id = "linkedinlogo"></a>
+			<img src="images/maillogo.png" alt = "Email Logo" width = 40  id = "sendMail">
+	
+			<script>
+				document.getElementById("sendMail").addEventListener("click", function () {
+					let mailtoLink = `mailto:cmao22@mit.edu?`;
+					window.location.href = mailtoLink;
+				});
+			</script>
+		</div>
 	</header>
 
-	<div class="contact">
-		<table>
-			<tr>
-				<td><a href="https://github.com/clam78"><img src="images/githublogo.png" alt = "GitHub Logo" width = 30 id = "githublogo"></a></td>
-				<td><a href="https://www.linkedin.com/in/clairemao-/"><img src="images/linkedinlogo.png" alt = "LinkedIn Logo" width = 30  id = "linkedinlogo"></a></td>
-				<td><img src="images/maillogo.png" alt = "Email Logo" width = 40  id = "sendMail"></td>
-			</tr>
-		</table>
-		
-		<script>
-			document.getElementById("sendMail").addEventListener("click", function () {
-				let mailtoLink = `mailto:cmao22@mit.edu?`;
-				window.location.href = mailtoLink;
-			});
-		</script>
-	</div>
+
 
 	<main>
 
@@ -42,8 +40,10 @@
 
 		<style>
 			.pdf {
-				width: 100%;
+				width: 80%;
 				aspect-ratio: 4 / 3;
+				display: block;
+				margin: 0 auto;
 			}
 		</style>
 		<div>

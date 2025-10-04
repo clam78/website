@@ -1,6 +1,7 @@
 header {
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 h2 {
@@ -8,10 +9,13 @@ h2 {
 }
 
 .contact {
-    position: fixed;
-    top: 0;
-    right: 0;
-    padding: 10px;
+    position: absolute;
+    top: 20px;
+    right: 40px;
+}
+
+.contact img {
+    margin-left: 20px;
 }
 
 #mylinks {
@@ -62,7 +66,7 @@ td {
 
 
 
-#contactform {
+/* #contactform {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -73,7 +77,7 @@ td {
 
 #contactform p {
     margin: 5px 0;
-}
+} */
 
 
 #subject {
