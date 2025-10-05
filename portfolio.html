@@ -31,14 +31,14 @@
 
 		<div class="navbar">
 			<a href="main.html" class="nav-item">Home</a>
-			<a href="cv.html" class="nav-item">CV</a>
+			<a href="cv.html" class="nav-item">Experience</a>
 			<a href="portfolio.html" class="nav-item">Music</a>
 			<a href="photos.html" class="nav-item">Photography</a>
 			<div class="underline"></div>
 		</div>
 
 		<div class="container">
-			<div class="card" id="Flute">
+			<div class="musiccard" id="Flute">
 			  <h2>Flute</h2>
 
 			  <iframe src="https://drive.google.com/file/d/1tPOS875HcsNA75IxX5cAy1jzAb6eY22m/preview" width="450" height="260" allow="autoplay"></iframe>
@@ -60,7 +60,7 @@
 			</div>
 		
 		  
-			<div class="card" id="Piano">
+			<div class="musiccard" id="Piano">
 			  <h2>Piano</h2>
 
 			  <iframe src="https://drive.google.com/file/d/1bNmITrerLvKXRrBjRkXDKQUnzIFaVf7R/preview" width="450" height="260" allow="autoplay"></iframe>
@@ -81,8 +81,8 @@
 			  </p>
 			</div>
 
-			<div class="card" id="Composition">
-				<h2>Composition & Current Projects</h2>
+			<div class="musiccard" id="Composition">
+				<h2>Composition</h2>
 				<iframe src="https://drive.google.com/file/d/1iQV-jRcf8zQoOm9ahAYBLN1WQxnqHkkM/preview" width="450" height="260" allow="autoplay"></iframe>
 
  				<p>
@@ -144,7 +144,7 @@
 	});
 
 	// portfolio-specific: 2 animations, scroll and zoom when video is hovered over
-  const cards = document.querySelectorAll(".card");
+  const musiccards = document.querySelectorAll(".musiccard");
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -156,7 +156,7 @@
     threshold: 0.1
   });
 
-  cards.forEach(card => observer.observe(card));
+  musiccards.forEach(musiccard => observer.observe(musiccard));
 
   </script>
   

@@ -5,7 +5,7 @@ header {
 }
 
 h2 {
-    color: rgb(177, 57, 99);
+  color: rgb(177, 57, 99);
 }
 
 .contact {
@@ -36,12 +36,14 @@ h2 {
 
 #homeMain {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1.5fr 2.5fr;
     grid-template-rows: auto;
     gap: 20px;
     padding: 10px;
     max-width: 800px;
 }
+
+
 
 body {
     background-color: rgba(255, 255, 242, 0.514);
@@ -101,7 +103,7 @@ td {
 }
 
 .container div {
-    background: #efdff1;
+    background: #efe3f07f;
     border-radius: 10px;
     color: #000000;
 }
@@ -158,97 +160,31 @@ img, video {
     left: 0;
     }
 
-/* slide gallery on main page */
-
-.hero-gallery {
-    margin: 12px 0 20px;
-  }
-  
-.scroller {
-    display: flex;
-    gap: 16px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    padding: 0 12px;
-  }
-  
-/* hide scrollbar */
-.scroller::-webkit-scrollbar { height: 0; }
-.scroller { scrollbar-width: none; }
-
-/* slides */
-.scroller img {
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-    scroll-snap-align: center;
-  }
-
-
-/* captions */
-.slide {
-    position: relative;
-    display: inline-block;
-    border-radius: 8px;
-    overflow: hidden;
-    scroll-snap-align: center;
-    flex: none;
-  }
-
-  
-.slide img {
-    display: block;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-
-.caption {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px;
-    text-align: center;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.45);
-    opacity: 0;
-    transition: opacity .3s ease;
-  }
-
-.slide:hover .caption,
-.slide:focus .caption,
-.slide:focus-within .caption {
-    opacity: 1;
-  }
 
 
 /* portfolio */
 
-.card {
+.musiccard {
     opacity: 0;
     transform: translateY(40px);
     transition: all 0.6s ease;
     margin-bottom: 60px;
   }
   
-.card.visible {
+.musiccard.visible {
     opacity: 1;
     transform: translateY(0);
   }
   
-.card video {
+.musiccard video {
     width: 100%;
     transition: transform 0.3s ease;
   }
   
-.card video:hover {
+.musiccard video:hover {
     transform: scale(1.05);
   }
-  
+/*   
 .card h2 {
     position: relative;
     display: inline-block;
@@ -266,10 +202,18 @@ img, video {
 .card h2:hover::after {
     width: 100%;
   }
-  
+   */
 #fishnflower { 
     width: 280px;
     height: 200px;
     object-fit: cover;
 }
-
+/* 
+#worklogo {
+  margin-right: 10px;
+} */
+/* 
+.workexperience {
+  text-align: center;
+}
+ */
